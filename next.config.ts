@@ -1,10 +1,8 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-	/* config options here */
+const nextConfig = {
 	experimental: {
-		turbopackFileSystemCacheForDev: true,
+		turbopackFileSystemCacheForDev: false,
 	},
+	reactCompiler: true,
 };
 
 export default nextConfig;
