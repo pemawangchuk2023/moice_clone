@@ -5,16 +5,21 @@ export const navigationLinks = [
 	},
 	{
 		label: "About Us",
-		href: "/about-us",
+		href: "/about",
+		subLinks: [
+			{ label: "Mission and Vision", href: "/about/mv" },
+			{ label: "Background of Ministry", href: "/about/background" },
+			{ label: "Office of the Minister", href: "/about/minister" },
+			{ label: "Ministry's Leadership", href: "/about/leadership" },
+		],
 	},
 	{
 		label: "Departments",
 		href: "/departments",
 		subLinks: [
-			{ label: "Office of the Secretary", href: "/departments/os" },
 			{ label: "Department of Trade", href: "/departments/trade" },
-			{ label: "Department of Industry", href: "/departments/doi" },
 			{ label: "Department of Labour", href: "/departments/dol" },
+			{ label: "Department of Industry", href: "/departments/doi" },
 			{
 				label: "Department of Employment and Entrepreneurship",
 				href: "/departments/doee",

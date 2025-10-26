@@ -3,6 +3,7 @@ import "./globals.css";
 import ThemeProvider from "@/themes/theme-provider";
 import LayoutLoader from "@/components/layout-loader";
 import { Poppins } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner";
 
 const poppins = Poppins({
 	subsets: ["latin"],
@@ -31,7 +32,10 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<LayoutLoader>{children}</LayoutLoader>
+					<LayoutLoader>
+						<main>{children}</main>
+						<Toaster />
+					</LayoutLoader>
 				</ThemeProvider>
 			</body>
 		</html>

@@ -28,33 +28,22 @@ const DesktopNavbar = () => {
 	return (
 		<div className='hidden lg:flex flex-col w-full'>
 			{/* Logo and heading container with grid */}
-			<div className='relative flex items-center justify-center pb-4 px-6'>
+			<div className='relative flex items-center justify-center pb-1 px-6 mt-[-35px]'>
 				{/* Emblem - positioned absolutely to the left */}
-				<div className='absolute left-6 hidden md:block'>
-					{/* <Image
-						src='/assets/emb.png'
-						alt='Emblem'
-						width={200}
-						height={200}
-						className='rounded dark:invert-0'
-						priority
-					/> */}
-				</div>
 
 				{/* Heading - stays centered */}
-				<div className='flex justify-center'>
+				<div className='flex justify-center rounded-none'>
 					<Image
 						src={headingImage}
 						alt='heading'
 						width={700}
 						height={700}
-						className='rounded hidden md:block dark:invert-0'
+						className='hidden md:block dark:invert-0'
 						priority
 					/>
 				</div>
 			</div>
-
-			<p className='text-3xl text-foreground font-extrabold text-center mt-2'>
+			<p className='text-3xl text-foreground font-extrabold text-center mt-1'>
 				Ministry of Industry, Commerce and Employment
 			</p>
 
@@ -79,7 +68,7 @@ const DesktopNavbar = () => {
 											</NavigationMenuTrigger>
 
 											<NavigationMenuContent>
-												<div className='w-[280px] sm:w-[400px] md:w-[500px] lg:w-[600px] p-6'>
+												<div className='w-[280px] sm:w-[400px] md:w-[500px] lg:w-[600px] p-6 border dark:bg-[#030712] bg-card'>
 													<div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2'>
 														{item.subLinks.map((sub) => (
 															<Link
