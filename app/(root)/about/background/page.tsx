@@ -5,13 +5,13 @@ import { timelineEvents } from "@/constants/background";
 const Background = () => {
 	return (
 		<div className='min-h-screen'>
-			<div className='mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8'>
+			<div className='mx-auto max-w-5xl px-4 py-8 sm:py-8 sm:px-6 lg:px-8 mt-4'>
 				{/* Hero Header */}
-				<header className='mb-16 text-center'>
+				<header className='mb-8 text-center'>
 					<div className='mb-4 inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-primary'>
 						<Badge variant='secondary'>Historical Journey</Badge>
 					</div>
-					<p className='mx-auto max-w-2xl text-lg text-foreground'>
+					<p className='mx-auto max-w-xl text-lg text-foreground'>
 						A comprehensive timeline chronicling the evolution of employment and
 						labour administration in Bhutan
 					</p>
@@ -67,10 +67,10 @@ const Background = () => {
 												</div>
 											)}
 
-											<div className='p-6 sm:p-8'>
+											<div className='p-4 sm:p-8'>
 												{/* Title */}
 												<h3
-													className={`mb-4 pr-24 text-xl text-blue-500 font-bold sm:text-2xl text-justify ${
+													className={`mb-4 pr-24 text-[18px] text-blue-500 font-bold sm:text-[16px] text-justify ${
 														isLeft ? "" : "sm:pr-24"
 													}`}
 												>
@@ -78,7 +78,7 @@ const Background = () => {
 												</h3>
 
 												{/* Description */}
-												<p className='mb-4 text-justify text-foreground text-[18px]'>
+												<p className='mb-4 text-justify text-foreground text-[16px]'>
 													{event.description}
 												</p>
 
@@ -121,7 +121,7 @@ const Background = () => {
 
 				{/* Footer Summary */}
 				<footer className='mt-16 rounded-none border border-border bg-card/50 p-8 text-center backdrop-blur-sm'>
-					<h3 className='mb-3 text-xl font-semibold text-foreground'>
+					<h3 className='mb-3 text-xl font-semibold text-[#B91372]'>
 						Present Day
 					</h3>
 					<p className='w-full text-foreground text-[20px] text-justify'>

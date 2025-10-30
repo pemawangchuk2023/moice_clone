@@ -36,7 +36,7 @@ const MobileNavbar = () => {
 		resolvedTheme === "dark" ? "/assets/heading2.png" : "/assets/heading1.png";
 
 	return (
-		<div className='lg:hidden'>
+		<div className='flex md:hidden w-full'>
 			<Sheet open={open} onOpenChange={setOpen}>
 				<div className='flex items-center justify-between px-4 py-3'>
 					<div className='flex flex-col items-center justify-center w-full'>

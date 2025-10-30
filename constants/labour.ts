@@ -1,5 +1,3 @@
-// constants/labour.ts
-
 export const labourData = {
 	department: {
 		name: "Department of Labour",

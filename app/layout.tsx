@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import ThemeProvider from "@/themes/theme-provider";
-import LayoutLoader from "@/components/layout-loader";
 import { Poppins } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
 
@@ -32,10 +31,8 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<LayoutLoader>
-						<main>{children}</main>
-						<Toaster />
-					</LayoutLoader>
+					<main>{children}</main>
+					<Toaster />
 				</ThemeProvider>
 			</body>
 		</html>

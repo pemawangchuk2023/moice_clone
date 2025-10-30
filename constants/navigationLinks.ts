@@ -9,10 +9,12 @@ export const navigationLinks = [
 		subLinks: [
 			{ label: "Mission and Vision", href: "/about/mv" },
 			{ label: "Background of Ministry", href: "/about/background" },
-			{ label: "Office of the Minister", href: "/about/minister" },
+			{ label: "Office of the Minister", href: "/about/minister-office" },
 			{ label: "Ministry's Leadership", href: "/about/leadership" },
+			{ label: "Ministry's Organogram", href: "/about/os" },
 		],
 	},
+
 	{
 		label: "Departments",
 		href: "/departments",

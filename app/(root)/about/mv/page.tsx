@@ -2,15 +2,15 @@ import { objectives } from "@/constants/objectives";
 
 const MissionVision = () => {
 	return (
-		<main className='w-full mt-0'>
+		<main className='w-full mt-5 py-8'>
 			{/* About Us Section */}
-			<section className='w-full pt-0 pb-2 md:pt-0 md:pb-14 lg:pt-0 lg:pb-10'>
+			<section className='w-full pt-0 pb-2 md:pt-0 md:pb-8 lg:pt-0 lg:pb-10'>
 				<div className='w-full px-4 md:px-6 mx-auto'>
 					<div className='space-y-4'>
 						<h1 className='text-3xl text-center font-bold sm:text-5xl xl:text-6xl/none text-blue-900 dark:text-white'>
 							MoICE
 						</h1>
-						<p className='w-full text-foreground md:text-xl text-justify'>
+						<p className='w-full text-foreground md:text-[18px] text-justify'>
 							The MoICE aim to promote quality and sustained economic growth
 							with decent and productive employment through creative and
 							innovative interventions to strengthen Bhutan’s private sector.
@@ -20,15 +20,15 @@ const MissionVision = () => {
 			</section>
 
 			{/* Mission & Vision */}
-			<section className='w-full py-6 md:py-12'>
+			<section className='w-full py-2 md:py-2'>
 				<div className='container px-4 md:px-6 mx-auto'>
 					<div className='grid gap-1 lg:grid-cols-2 lg:gap-2 items-start'>
 						<div className='space-y-4'>
-							<h2 className='text-3xl font-bold sm:text-4xl md:text-5xl text-blue-900 dark:text-white'>
+							<h2 className='text-zxl font-bold sm:text-4xl md:text-3xl text-blue-900 dark:text-white'>
 								Our Vision
 							</h2>
 							<div className='p-6 rounded-xl border-l-4 border-blue-600'>
-								<p className='text-foreground md:text-xl text-justify'>
+								<p className='text-foreground md:text-[18px] text-justify'>
 									“To promote quality and sustained economic growth with decent
 									and productive employment through creative and innovative
 									interventions to promote the private sectors.”
@@ -36,10 +36,10 @@ const MissionVision = () => {
 							</div>
 						</div>
 						<div className='space-y-4'>
-							<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-blue-900 dark:text-white'>
+							<h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-3xl text-blue-900 dark:text-white'>
 								Our Mission
 							</h2>
-							<div className='p-6 rounded-xl border-l-4 border-blue-600 space-y-4 text-foreground md:text-xl text-justify'>
+							<div className='p-6 rounded-xl border-l-4 border-blue-600 space-y-4 text-foreground md:text-[18px] text-justify'>
 								<p>
 									“Improving the ease of doing business by establishing a
 									responsive and coordinated regulatory framework, and
@@ -73,7 +73,7 @@ const MissionVision = () => {
 			{/* Objectives */}
 			<section className='w-full py-8 md:py-10 lg:py-16'>
 				<div className='container px-4 md:px-6 mx-auto'>
-					<h2 className='text-3xl font-bold text-center mb-12 sm:text-4xl md:text-5xl text-blue-900 dark:text-white'>
+					<h2 className='text-3xl font-bold text-center mb-12 sm:text-4xl md:text-3xl text-blue-900 dark:text-white'>
 						Our Objectives
 					</h2>
 					<div className='grid gap-8 md:grid-cols-2 lg:grid-cols-3'>

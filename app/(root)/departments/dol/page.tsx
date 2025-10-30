@@ -1,258 +1,163 @@
 "use client";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+import GlowCard from "@/components/shared/glow-card";
 import { labourData } from "@/constants/labour";
+import { easeOut, motion } from "framer-motion";
 
-const Labour = () => {
+const DoL = () => {
+	const sectionVariants = {
+		hidden: { opacity: 0, y: 20 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: { duration: 0.6, ease: easeOut },
+		},
+	};
+
 	return (
-		<div className='min-h-screen bg-gradient-to-br from-background via-background to-muted/20'>
-			{/* Hero Header with Gradient Accent */}
-			<div className='relative overflow-hidden'>
-				<div className='absolute inset-0 bg-gradient-to-r from-chart-1/10 via-chart-2/10 to-chart-3/10 dark:from-chart-1/5 dark:via-chart-2/5 dark:to-chart-3/5' />
-				<div className='relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 text-center'>
-					<div className='px-5 py-3 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full shadow-md inline-block'>
-						<span className='font bold text-foreground text-xl'>
-							Building Tomorrow&apos;s Workforce
+		<div className='min-h-screen py-12 px-6 max-w-6xl mx-auto'>
+			{/* Header */}
+			<header className='mb-16 text-center'>
+				<motion.h1
+					initial={{ opacity: 0, scale: 0.95 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{ duration: 0.8 }}
+					className='text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400'
+				>
+					{labourData.department.name}
+				</motion.h1>
+				<div className='h-1.5 bg-gradient-to-r from-transparent via-yellow-500 to-transparent w-64 sm:w-96 mx-auto rounded-full mt-4 mb-8 shadow-md' />
+			</header>
+
+			<div className='space-y-16'>
+				{/* Vision */}
+				<motion.section
+					variants={sectionVariants}
+					initial='hidden'
+					whileInView='visible'
+					viewport={{ once: true }}
+				>
+					<h2 className='text-4xl font-extrabold mb-6 text-yellow-500 flex justify-center gap-3'>
+						Vision
+					</h2>
+					<div className='p-8 rounded-xl shadow-lg border'>
+						<p className='text-xl font-semibold text-yellow-500 mb-4'>
+							{labourData.vision.statement}
+						</p>
+						{labourData.vision.details.length > 0 && (
+							<ul className='space-y-3 text-foreground list-disc pl-6 text-justify'>
+								{labourData.vision.details.map((detail, i) => (
+									<li key={i}>{detail}</li>
+								))}
+							</ul>
+						)}
+					</div>
+				</motion.section>
+
+				{/* Mission */}
+				<motion.section
+					variants={sectionVariants}
+					initial='hidden'
+					whileInView='visible'
+					viewport={{ once: true }}
+				>
+					<h2 className='text-4xl font-extrabold mb-6 text-yellow-500 flex justify-center gap-3'>
+						Mission
+					</h2>
+					<div className='space-y-4'>
+						{labourData.mission.details.map((item, index) => (
+							<motion.div
+								key={index}
+								initial={{ opacity: 0, x: -20 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								transition={{ duration: 0.5, delay: index * 0.1 }}
+								viewport={{ once: true }}
+								className='p-6 rounded-xl shadow-md border flex gap-4 items-start'
+							>
+								<span className='flex-shrink-0 w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-full flex items-center justify-center text-base font-bold'>
+									{index + 1}
+								</span>
+								<p className='text-foreground text-justify'>{item}</p>
+							</motion.div>
+						))}
+					</div>
+				</motion.section>
+
+				{/* Core Values */}
+				<motion.section
+					variants={sectionVariants}
+					initial='hidden'
+					whileInView='visible'
+					viewport={{ once: true }}
+				>
+					<div className='flex items-baseline gap-3 mb-6'>
+						<h2 className='text-4xl font-extrabold mb-6 text-yellow-500 flex justify-center gap-3'>
+							Core Values
+						</h2>
+						<span className='text-xl px-3 py-1 rounded-full'>
+							({labourData.coreValues.acronym})
 						</span>
 					</div>
-					<h1 className='text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-4 animate-fade-in-up text-balance'>
-						{labourData.department.name}
-					</h1>
-					<p className='text-lg sm:text-xl text-foreground max-w-2xl mx-auto animate-fade-in-up text-balance'>
-						Empowering workers, supporting employers, and driving economic
-						growth
-					</p>
-				</div>
-			</div>
-
-			{/* Main Content */}
-			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 -mt-8'>
-				<Tabs defaultValue='vision' className='w-full'>
-					<TabsList className='grid w-full grid-cols-2 lg:grid-cols-4 h-auto p-1.5 bg-card/50 backdrop-blur-sm border shadow-lg mb-8'>
-						<TabsTrigger
-							value='vision'
-							className='flex items-center gap-2 data-[state=active]:bg-chart-1/20 data-[state=active]:text-chart-1 transition-all duration-300'
-						>
-							<span>Vision</span>
-						</TabsTrigger>
-						<TabsTrigger
-							value='mission'
-							className='flex items-center gap-2 data-[state=active]:bg-chart-2/20 data-[state=active]:text-chart-2 transition-all duration-300'
-						>
-							<span>Mission</span>
-						</TabsTrigger>
-						<TabsTrigger
-							value='coreValues'
-							className='flex items-center gap-2 data-[state=active]:bg-chart-3/20 data-[state=active]:text-chart-3 transition-all duration-300'
-						>
-							<span>Core Values</span>
-						</TabsTrigger>
-						<TabsTrigger
-							value='principles'
-							className='flex items-center gap-2 data-[state=active]:bg-chart-4/20 data-[state=active]:text-chart-4 transition-all duration-300'
-						>
-							<span>Principles</span>
-						</TabsTrigger>
-					</TabsList>
-
-					{/* Vision Tab */}
-					<TabsContent value='vision' className='animate-fade-in'>
-						<Card className='border-0 shadow-2xl'>
-							<div className='absolute top-0 right-0 w-64 h-64 rounded-full' />
-							<CardHeader className='relative space-y-4 pb-8'>
-								<div className='flex items-start justify-between flex-wrap gap-4 justify-center'>
-									<div className='space-y-2 '>
-										<div className='flex items-center gap-3'>
-											<CardTitle className='text-4xl sm:text-5xl font-bold text-foreground'>
-												Our Vision
-											</CardTitle>
-										</div>
-										<Badge
-											variant='secondary'
-											className='bg-chart-1/20 text-chart-1 border-chart-1/30 hover:bg-chart-1/30'
-										>
-											Strategic Direction
-										</Badge>
-									</div>
-								</div>
-							</CardHeader>
-							<CardContent className='relative space-y-6'>
-								<div className='p-8 sm:p-10 rounded-2xl bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm border-2 border-chart-1/20 shadow-inner space-y-6'>
-									<p className='text-2xl sm:text-3xl font-semibold text-foreground leading-relaxed text-center'>
-										{labourData.vision.statement}
+					<div className='grid md:grid-cols-2 gap-6'>
+						{labourData.coreValues.values.map((value, index) => (
+							<GlowCard
+								key={index}
+								className='rounded-md border-2 p-4 flex flex-col items-center text-center relative overflow-hidden bg-amber-100 dark:bg-zinc-900'
+							>
+								<motion.div
+									key={index}
+									initial={{ opacity: 0, y: 20 }}
+									whileInView={{ opacity: 1, y: 0 }}
+									transition={{ duration: 0.5, delay: index * 0.1 }}
+									viewport={{ once: true }}
+								>
+									<h3 className='font-bold text-xl text-yellow-500 font-bold mb-3'>
+										{value.title}
+									</h3>
+									<p className='text-foreground text-justify'>
+										{value.description}
 									</p>
-									<div className='h-px bg-gradient-to-r from-transparent via-chart-1/30 to-transparent' />
-									{labourData.vision.details.map((detail, i) => (
-										<p
-											key={i}
-											className='text-base sm:text-lg text-foreground leading-relaxed text-justify'
-										>
-											{detail}
-										</p>
-									))}
-								</div>
-							</CardContent>
-						</Card>
-					</TabsContent>
+								</motion.div>
+							</GlowCard>
+						))}
+					</div>
+					{labourData.coreValues.definition && (
+						<p className='mt-6 text-green-500 text-center text-xl'>
+							{labourData.coreValues.definition}
+						</p>
+					)}
+				</motion.section>
 
-					{/* Mission Tab */}
-					<TabsContent value='mission' className='animate-fade-in'>
-						<Card className='border-0 shadow-2xl'>
-							<div className='absolute top-0 left-0 w-64 h-64' />
-							<CardHeader className='relative space-y-4 pb-8'>
-								<div className='flex items-start justify-center text-center flex-wrap gap-4'>
-									<div className='space-y-2'>
-										<div className='flex items-center gap-3'>
-											<CardTitle className='text-4xl sm:text-5xl font-bold text-foreground'>
-												Our Mission
-											</CardTitle>
-										</div>
-										<Badge
-											variant='secondary'
-											className='bg-chart-1/20 text-chart-1 border-chart-1/30 hover:bg-chart-1/30'
-										>
-											Core Objectives
-										</Badge>
-									</div>
-								</div>
-							</CardHeader>
-							<CardContent className='relative space-y-6 text-justify'>
-								<div className='p-8 sm:p-10 rounded-2xl bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm border-2 border-chart-2/20 shadow-inner space-y-8'>
-									<p className='text-xl sm:text-2xl font-semibold text-foreground leading-relaxed text-balance'>
-										{labourData.mission.statement}
-									</p>
-									<div className='h-px bg-gradient-to-r from-transparent via-chart-2/30 to-transparent' />
-									<div className='grid gap-4'>
-										{labourData.mission.details.map((detail, index) => (
-											<Card
-												key={index}
-												className='group border-0 bg-gradient-to-r from-background/60 to-background/30 hover:from-chart-2/10 hover:to-chart-2/5 transition-all duration-300 hover:shadow-lg hover:scale-[1.02]'
-											>
-												<CardContent className='p-6'>
-													<div className='flex gap-4 items-start'>
-														<div className='flex-shrink-0 w-10 h-10 bg-gradient-to-br from-chart-2 to-chart-2/70 rounded-xl flex items-center justify-center text-primary-foreground font-bold shadow-lg group-hover:scale-110 transition-transform duration-300'>
-															{index + 1}
-														</div>
-														<p className='text-foreground text-base sm:text-lg leading-relaxed pt-1 text-pretty'>
-															{detail}
-														</p>
-													</div>
-												</CardContent>
-											</Card>
-										))}
-									</div>
-								</div>
-							</CardContent>
-						</Card>
-					</TabsContent>
-
-					{/* Core Values Tab */}
-					<TabsContent value='coreValues' className='animate-fade-in'>
-						<Card className='border-0 shadow-2xl'>
-							<div className='absolute top-0 right-0 w-96 h-96' />
-							<CardHeader className='relative space-y-4 pb-8 justify-center'>
-								<div className='flex items-start justify-center text-center flex-wrap gap-4'>
-									<div className='space-y-2'>
-										<div className='flex items-center gap-3'>
-											<CardTitle className='text-4xl sm:text-5xl font-bold text-foreground'>
-												Our Core Values
-											</CardTitle>
-										</div>
-										<Badge
-											variant='secondary'
-											className='bg-chart-1/20 text-chart-1 border-chart-1/30 hover:bg-chart-1/30'
-										>
-											{labourData.coreValues.acronym}
-										</Badge>
-									</div>
-								</div>
-								<p className='text-center sm:text-lg text-foreground leading-relaxed w-full text-justify'>
-									{labourData.coreValues.definition}
-								</p>
-							</CardHeader>
-							<CardContent className='relative'>
-								<div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-6'>
-									{labourData.coreValues.values.map((value, index) => (
-										<Card
-											key={index}
-											className='group border-0 bg-gradient-to-br from-background/80 to-background/40 backdrop-blur-sm hover:shadow-2xl transition-all duration-300 hover:scale-105 overflow-hidden'
-										>
-											<div className='absolute inset-0 bg-gradient-to-br from-chart-3/0 to-chart-3/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300' />
-											<div className='absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-chart-3 to-chart-3/50' />
-											<CardHeader className='relative'>
-												<div className='flex items-center gap-3 mb-2'>
-													<div className='w-8 h-8 rounded-lg bg-gradient-to-br from-chart-3 to-chart-3/70 flex items-center justify-center text-primary-foreground font-bold text-sm shadow-lg'>
-														{value.title[0]}
-													</div>
-													<CardTitle className='text-xl sm:text-2xl font-bold text-foreground'>
-														{value.title}
-													</CardTitle>
-												</div>
-											</CardHeader>
-											<CardContent className='relative'>
-												<p className='text-foreground text-justify text-sm sm:text-base leading-relaxed'>
-													{value.description}
-												</p>
-											</CardContent>
-										</Card>
-									))}
-								</div>
-							</CardContent>
-						</Card>
-					</TabsContent>
-
-					{/* Guiding Principles Tab */}
-					<TabsContent value='principles' className='animate-fade-in'>
-						<Card className='border-0 shadow-2xl'>
-							<div className='absolute bottom-0 left-0 w-96 h-96' />
-							<CardHeader className='relative space-y-4 pb-8'>
-								<div className='flex items-start justify-center text-center flex-wrap gap-4'>
-									<div className='space-y-2'>
-										<div className='flex items-center gap-3'>
-											<CardTitle className='text-4xl sm:text-5xl font-bold text-foreground'>
-												Guiding Principles
-											</CardTitle>
-										</div>
-										<Badge
-											variant='secondary'
-											className='bg-chart-1/20 text-chart-1 border-chart-1/30 hover:bg-chart-1/30'
-										>
-											Labour Administration System
-										</Badge>
-									</div>
-								</div>
-							</CardHeader>
-							<CardContent className='relative'>
-								<div className='grid sm:grid-cols-2 gap-4'>
-									{labourData.guidingPrinciples.principles.map(
-										(principle, index) => (
-											<Card
-												key={index}
-												className='group border-0 bg-gradient-to-r from-background/60 to-background/30 hover:from-chart-4/10 hover:to-chart-4/5 transition-all duration-300 hover:shadow-lg overflow-hidden'
-											>
-												<div className='absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-chart-4 to-chart-4/50 group-hover:w-2 transition-all duration-300' />
-												<CardContent className='p-6 pl-8 text-justify'>
-													<div className='flex gap-4 items-start'>
-														<div className='flex-shrink-0 w-10 h-10 bg-gradient-to-br from-chart-4 to-chart-4/70 rounded-xl flex items-center justify-center text-primary-foreground font-bold shadow-lg group-hover:scale-110 transition-transform duration-300'>
-															{index + 1}
-														</div>
-														<p className='text-foreground text-base sm:text-lg leading-relaxed pt-1 text-pretty'>
-															{principle}
-														</p>
-													</div>
-												</CardContent>
-											</Card>
-										)
-									)}
-								</div>
-							</CardContent>
-						</Card>
-					</TabsContent>
-				</Tabs>
+				{/* Guiding Principles */}
+				<motion.section
+					variants={sectionVariants}
+					initial='hidden'
+					whileInView='visible'
+					viewport={{ once: true }}
+				>
+					<h2 className='text-4xl font-extrabold mb-6 text-yellow-500 flex justify-center gap-3'>
+						Guiding Principles
+					</h2>
+					<div className='grid md:grid-cols-2 gap-6'>
+						{labourData.guidingPrinciples.principles.map((principle, index) => (
+							<motion.div
+								key={index}
+								initial={{ opacity: 0, x: 20 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								transition={{ duration: 0.5, delay: index * 0.1 }}
+								viewport={{ once: true }}
+								className='p-6 rounded-xl shadow-md border flex gap-4 items-start'
+							>
+								<span className='flex-shrink-0 w-8 h-8 bg-gradient-to-br from-gray-600 to-gray-800 dark:from-gray-400 dark:to-gray-600 text-white dark:text-gray-900 rounded-full flex items-center justify-center text-base font-bold'>
+									{index + 1}
+								</span>
+								<p className='text-foreground'>{principle}</p>
+							</motion.div>
+						))}
+					</div>
+				</motion.section>
 			</div>
 		</div>
 	);
 };
 
-export default Labour;
+export default DoL;
