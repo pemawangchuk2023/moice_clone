@@ -39,8 +39,8 @@ const DesktopNavbar = () => {
 					<Image
 						src={headingImage}
 						alt='heading'
-						width={400}
-						height={400}
+						width={600}
+						height={600}
 						className='hidden md:block dark:invert-0 w-auto h-auto max-w-[450px] lg:max-w-[450px]'
 						priority
 					/>

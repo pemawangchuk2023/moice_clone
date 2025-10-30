@@ -1,3 +1,4 @@
+import Disclaimer from "@/components/disclaimer";
 import DesktopNavbar from "@/components/navbar/desktop-navbar";
 import MobileNavbar from "@/components/navbar/mobile-navbar";
 import React from "react";
@@ -18,6 +19,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
 			<main className='flex-1 w-full px-4 md:px-6 lg:px-8 py-4 md:py-6'>
 				{children}
 			</main>
+			<Disclaimer />
 		</div>
 	);
 };
