@@ -15,6 +15,9 @@ export const metadata: Metadata = {
 	title: "MoICE",
 	description:
 		"The web application developed to test NextJS 16 and its feature",
+	icons: {
+		icon: "/assets/emb.png",
+	},
 };
 
 export default function RootLayout({
@@ -27,7 +30,7 @@ export default function RootLayout({
 			<body className={poppins.variable}>
 				<ThemeProvider
 					attribute='class'
-					defaultTheme='system'
+					defaultTheme='dark'
 					enableSystem
 					disableTransitionOnChange
 				>
