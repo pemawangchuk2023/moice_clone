@@ -8,13 +8,18 @@ import CCAA from "@/app/(root)/publications/_components/ccaa/ccaa";
 import { publicationCategories } from "@/constants/publications/ccaa";
 import SisterSites from "@/components/shared/sister-sites";
 import Footer from "@/components/footer";
+import DoE from "@/app/(root)/publications/_components/doe/doe";
+import DoL from "@/app/(root)/publications/_components/dol/dol";
+import { doeeCategories } from "@/constants/publications/doee";
+import { dolCategories } from "@/constants/publications/dol";
+import DoT from "@/app/(root)/publications/_components/dot/dot";
+import { dotCategories } from "@/constants/publications/trade";
 
 const Publications = () => {
 	const tabs = [
 		{ id: "ccaa", label: "Competition and Consumer Affairs Authority" },
 		{ id: "dol", label: "Department of Labour" },
 		{ id: "doee", label: "Department of Employment and Entrepreneurship" },
-		{ id: "doi", label: "Department of Industry" },
 		{ id: "dot", label: "Department of Trade" },
 	];
 
@@ -53,7 +58,7 @@ const Publications = () => {
 							</GlowCard>
 						))}
 					</TabsList>
-					<div className='h-1 md:h-1.5 bg-gradient-to-r from-transparent via-yellow-500 to-transparent w-48 sm:w-64 mx-auto rounded-full mb-4 md:mb-6' />
+					<div className='h-1 md:h-1.5 bg-gradient-to-r from-transparent via-yellow-500 to-transparent w-48 sm:w-64 mx-auto rounded-full mb-1 md:mb-2' />
 
 					{tabs.map((tab) => (
 						<TabsContent
@@ -61,16 +66,25 @@ const Publications = () => {
 							value={tab.id}
 							className='animate-in fade-in duration-300'
 						>
-							<div className='text-center mb-8'>
-								<h2 className='text-3xl font-bold text-foreground mb-2'>
+							<div className='text-center mb-0'>
+								<h2 className='text-3xl font-bold text-foreground mb-1'>
 									{tab.label}
 								</h2>
 								<div className='h-1 w-24 bg-amber-500 rounded mx-auto'></div>
 							</div>
-							<Card className='p-4 md:p-6 shadow-sm'>
+							<Card className='p-4 md:p-2 shadow-sm'>
 								{tab.id === "ccaa" && (
 									<CCAA categories={publicationCategories} />
 								)}
+							</Card>
+							<Card className='p-4 md:p-2 shadow-sm'>
+								{tab.id === "doee" && <DoE categories={doeeCategories} />}
+							</Card>
+							<Card className='p-4 md:p-6 shadow-sm'>
+								{tab.id === "dol" && <DoL categories={dolCategories} />}
+							</Card>
+							<Card className='p-4 md:p-6 shadow-sm'>
+								{tab.id === "dot" && <DoT categories={dotCategories} />}
 							</Card>
 						</TabsContent>
 					))}

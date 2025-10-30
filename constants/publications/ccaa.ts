@@ -171,11 +171,6 @@ export const publicationCategories: PublicationCategory[] = [
 				url: "/publications/ccaa/imp/Market-Inspection-Report-22-28-Nov-20.pdf",
 			},
 			{
-				title: "Market Inspection Report Final (1)",
-				fileName: "Market-Inspection-Report-final-(1).pdf",
-				url: "/publications/ccaa/imp/Market-Inspection-Report-final-(1).pdf",
-			},
-			{
 				title: "Market Inspection Report Final",
 				fileName: "Market-Inspection-Report-final-.pdf",
 				url: "/publications/ccaa/imp/Market-Inspection-Report-final-.pdf",
@@ -194,11 +189,6 @@ export const publicationCategories: PublicationCategory[] = [
 				title: "Report on Market Monitoring – Tsirang and Sarpang",
 				fileName: "Report-on-Market-Monitoring-Tsirang-and-Sarpang.pdf",
 				url: "/publications/ccaa/imp/Report-on-Market-Monitoring-Tsirang-and-Sarpang.pdf",
-			},
-			{
-				title: "Report on Verification of Weights and Measures",
-				fileName: "Report-on-Verification-of-Weights-and-Measures.pdf",
-				url: "/publications/ccaa/imp/Report-on-Verification-of-Weights-and-Measures.pdf",
 			},
 		],
 	},
