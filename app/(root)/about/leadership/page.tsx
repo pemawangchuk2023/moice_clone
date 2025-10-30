@@ -169,7 +169,7 @@ const Leadership = () => {
 											<div className='absolute inset-0 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full opacity-20 blur-lg' />
 											<div className='relative w-full h-full rounded-full overflow-hidden border-2 sm:border-3 md:border-4 border-white shadow-lg md:shadow-xl group-hover:border-yellow-400 transition-all duration-300'>
 												<Image
-													src={person.image}
+													src={person.image || ""}
 													alt={`${person.name} - ${person.title}`}
 													fill
 													className='object-cover'
