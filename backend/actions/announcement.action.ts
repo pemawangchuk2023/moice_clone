@@ -67,39 +67,37 @@ export async function uploadAnnouncement(formData: FormData) {
 	}
 }
 
-export const getAnnouncements = cache(
-	async (): Promise<UploadAnnouncement[]> => {
-		await connectToDatabase();
-		const announcements = await AnnouncementModel.find().sort({
-			created_at: -1,
-		});
-		return announcements.map((ann) => {
-			let fileType = "none";
-			let fileUrl = "";
+export async function getAnnouncements(): Promise<UploadAnnouncement[]> {
+	await connectToDatabase();
+	const announcements = await AnnouncementModel.find().sort({
+		created_at: -1,
+	});
+	return announcements.map((ann) => {
+		let fileType = "none";
+		let fileUrl = "";
 
-			// Check image first, then announcement/document
-			if (ann.image_path) {
-				fileType = "image";
-				fileUrl = ann.image_path;
-			} else if (ann.announcement_path) {
-				const ext = getFileExtension(ann.announcement_path);
-				fileType = ext === "pdf" ? "pdf" : "none";
-				fileUrl = ann.announcement_path;
-			}
-			return {
-				id: ann._id.toString(),
-				title: ann.title,
-				description: ann.description,
-				announcement_path: ann.announcement_path,
-				image_path: ann.image_path,
-				created_at: ann.created_at,
-				fileUrl: fileUrl,
-				fileType: fileType,
-				views: ann.views,
-			};
-		});
-	}
-);
+		// Check image first, then announcement/document
+		if (ann.image_path) {
+			fileType = "image";
+			fileUrl = ann.image_path;
+		} else if (ann.announcement_path) {
+			const ext = getFileExtension(ann.announcement_path);
+			fileType = ext === "pdf" ? "pdf" : "none";
+			fileUrl = ann.announcement_path;
+		}
+		return {
+			id: ann._id.toString(),
+			title: ann.title,
+			description: ann.description,
+			announcement_path: ann.announcement_path,
+			image_path: ann.image_path,
+			created_at: ann.created_at,
+			fileUrl: fileUrl,
+			fileType: fileType,
+			views: ann.views,
+		};
+	});
+}
 
 export async function incrementAndGetViews(documentId: string) {
 	await connectToDatabase();
