@@ -1,6 +1,6 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
+import CountUp from "react-countup";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import { ministryServices } from "@/constants/jobs";
@@ -8,9 +8,9 @@ import Link from "next/link";
 import GlowCard from "@/components/shared/glow-card";
 
 export const jobStatistics = {
-	totalJobSeekers: "10,0000+",
-	registeredEmployers: "50,100+",
-	activeJobSeekers: "3,900+",
+	totalJobSeekers: 100000,
+	registeredEmployers: 50100,
+	activeJobSeekers: 3900,
 };
 
 const Stats = () => {
@@ -33,7 +33,7 @@ const Stats = () => {
 	];
 
 	return (
-		<div className='min-h-screen py-12 px-4 sm:px-6 lg:px-8'>
+		<div className='min-h-screen py-2 px-4 sm:px-6 lg:px-8'>
 			<div className='max-w-7xl mx-auto space-y-12'>
 				{/* Header */}
 				<div className='text-center space-y-4'>
@@ -61,7 +61,7 @@ const Stats = () => {
 							<div>
 								<div className='space-y-1'>
 									<p className='text-3xl sm:text-4xl font-bold text-foreground'>
-										{stat.value}
+										<CountUp end={stat.value} />
 									</p>
 									<p className='text-sm font-medium text-orange-500'>
 										{stat.label}

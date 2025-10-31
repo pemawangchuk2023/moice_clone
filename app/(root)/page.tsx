@@ -14,6 +14,7 @@ import { doeeCategories } from "@/constants/publications/doee";
 import { dolCategories } from "@/constants/publications/dol";
 import DoT from "@/app/(root)/publications/_components/dot/dot";
 import { dotCategories } from "@/constants/publications/trade";
+import AnnouncementDisplay from "@/app/(moice)/_components/announcement-display";
 
 const Publications = () => {
 	const tabs = [
@@ -25,6 +26,9 @@ const Publications = () => {
 
 	return (
 		<div>
+			<div className='mt-2'>
+				<AnnouncementDisplay />
+			</div>
 			<Stats />
 			<div className='text-center mb-12'>
 				<h1 className='text-4xl font-bold text-foreground mb-4'>
@@ -34,7 +38,7 @@ const Publications = () => {
 					Browse and download our collection of reports and documents
 				</p>
 			</div>
-			<div className='min-h-screen p-4 md:p-6'>
+			<div className='min-h-screen p-4 md:p-3'>
 				<Tabs defaultValue='dol' className='w-full'>
 					<TabsList className='w-full h-auto flex-wrap justify-start gap-2 bg-transparent p-0 mb-8'>
 						{tabs.map((tab) => (
@@ -66,24 +70,19 @@ const Publications = () => {
 							value={tab.id}
 							className='animate-in fade-in duration-300'
 						>
-							<div className='text-center mb-0'>
+							<div className='text-center mb-4'>
 								<h2 className='text-3xl font-bold text-foreground mb-1'>
 									{tab.label}
 								</h2>
 								<div className='h-1 w-24 bg-amber-500 rounded mx-auto'></div>
 							</div>
-							<Card className='p-4 md:p-2 shadow-sm'>
+
+							<Card className='p-4 md:p-6 shadow-sm'>
 								{tab.id === "ccaa" && (
 									<CCAA categories={publicationCategories} />
 								)}
-							</Card>
-							<Card className='p-4 md:p-2 shadow-sm'>
 								{tab.id === "doee" && <DoE categories={doeeCategories} />}
-							</Card>
-							<Card className='p-4 md:p-6 shadow-sm'>
 								{tab.id === "dol" && <DoL categories={dolCategories} />}
-							</Card>
-							<Card className='p-4 md:p-6 shadow-sm'>
 								{tab.id === "dot" && <DoT categories={dotCategories} />}
 							</Card>
 						</TabsContent>

@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import GlowCard from "@/components/shared/glow-card";
-import PaginationComponent from "@/components/pagination";
+import PaginationComponent from "@/components/shared/pagination";
 import {
 	DoEEPublication,
 	DoEEPublicationCategory,

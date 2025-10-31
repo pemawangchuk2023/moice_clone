@@ -28,10 +28,18 @@ const DesktopNavbar = () => {
 
 	return (
 		<div className='hidden md:block sticky top-0 w-full z-50 bg-background shadow-md'>
-			<div className='absolute top-4 right-6 z-50'>
+			<div className='absolute top-4 right-6 z-50 flex items-center gap-3'>
+				<Image
+					src='/assets/believe.png'
+					alt='Believe Logo'
+					width={120}
+					height={120}
+					className='rounded-md'
+					priority
+				/>
 				<ThemeToggle />
 			</div>
-			{/* Logo and heading container */}
+
 			<div className='relative flex items-center justify-center pb-2 px-6 mt-4'>
 				{/* Heading - stays centered */}
 
