@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
-const dbName = "moice_clone";
-const MONGODB_URI = `${process.env.MONGODB_URI}/${dbName}`;
+const MONGODB_URI = process.env.MONGODB_URI;
 
 declare global {
 	var mongooseCache: {
@@ -33,7 +32,7 @@ export const connectToDatabase = async () => {
 		cached.promise = null;
 		throw error;
 	}
+	console.log(`Connected to database ${process.env.NODE_ENV} ${MONGODB_URI}`);
 
-	console.log(`Connected to database "${dbName}" using URI: ${MONGODB_URI}`);
 	return cached.conn;
 };
