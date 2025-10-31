@@ -6,8 +6,8 @@ import { existsSync } from "fs";
 import { connectToDatabase } from "@/database/mongoose";
 import { cache } from "react";
 import { revalidatePath } from "next/cache";
-import { AnnouncementModel } from "@/backend/model/annoucement.model";
 import { UploadAnnouncement } from "@/types/ministry";
+import { AnnouncementModel } from "@/backend/model/announcement.model";
 
 // Helper to get file extension
 function getFileExtension(filename: string): string {
