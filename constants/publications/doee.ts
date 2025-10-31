@@ -190,43 +190,4 @@ export const doeeCategories: DoEEPublicationCategory[] = [
 			},
 		],
 	},
-	// --- Category: Reports, Researches & Other Publication ---
-	{
-		key: "rro",
-		name: "Reports, Researches & Other Publications",
-		publications: [
-			{
-				title: "Stories of Beneficiaries (May 2019)",
-				fileName: "Stories-of-Beneficiaries-22.5.2019.pdf",
-				url: "/publications/doee/rro/Stories-of-Beneficiaries-22.5.2019.pdf",
-				date: "May 2019",
-			},
-			{
-				title: "DoEE Annual Report 2022–2023 (Final Edition 1)",
-				fileName: "DoEE-Annual-Report-2022-23-Final-Edition-1.pdf",
-				url: "/publications/doee/rro/DoEE-Annual-Report-2022-23-Final-Edition-1.pdf",
-				date: "2022–2023",
-			},
-			{
-				title: "DoEE Annual Report 2024–2025",
-				fileName: "DoEE-Annual-Report-2024-25.pdf",
-				url: "/publications/doee/rro/DoEE-Annual-Report-2024-25.pdf",
-				date: "2024–2025",
-			},
-			{
-				title: "Employment and Entrepreneurship Report 2023–2024",
-				fileName: "EER_2023-24-Report.pdf",
-				url: "/publications/doee/rro/EER_2023-24-Report.pdf",
-				date: "2023–2024",
-			},
-			{
-				title:
-					"Survey Report – Overseas Employment Program Monitoring 2024–2025",
-				fileName:
-					"Survey-Report_-Overseas-Employment-Program-Monitoring-2024-2025-2.pdf",
-				url: "/publications/doee/rro/Survey-Report_-Overseas-Employment-Program-Monitoring-2024-2025-2.pdf",
-				date: "2024–2025",
-			},
-		],
-	},
 ];
