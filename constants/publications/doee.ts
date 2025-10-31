@@ -163,31 +163,4 @@ export const doeeCategories: DoEEPublicationCategory[] = [
 			},
 		],
 	},
-	// --- Category: Quarterly Labour Market Information Updates ---
-	{
-		key: "qlmiu",
-		name: "Quarterly Labour Market Information Updates",
-		publications: [
-			{
-				title:
-					"Quarterly Labour Market Information Update – 1st Quarter 2024–2025",
-				fileName:
-					"Quarterly-Labour-Market-Information-Update_1st-Quarter-2024-25.pdf",
-				url: "/publications/doee/qlmiu/Quarterly-Labour-Market-Information-Update_1st-Quarter-2024-25.pdf",
-				date: "1st Quarter 2024–2025",
-			},
-			{
-				title: "3rd Quarter Labour Market Information Update",
-				fileName: "3rd-Quarter-Labour-Market-Information-Update.pdf",
-				url: "/publications/doee/qlmiu/3rd-Quarter-Labour-Market-Information-Update.pdf",
-				date: "3rd Quarter",
-			},
-			{
-				title: "4th Quarter Labour Market Information Update",
-				fileName: "4th-Quarter-Labour-Market-Information-Update.pdf",
-				url: "/publications/doee/qlmiu/4th-Quarter-Labour-Market-Information-Update.pdf",
-				date: "4th Quarter",
-			},
-		],
-	},
 ];
