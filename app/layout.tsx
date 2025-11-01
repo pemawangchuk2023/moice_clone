@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 	description:
 		"The web application developed to test NextJS 16 and its feature",
 	icons: {
-		icon: "/assets/emb.png",
+		icon: "/assets/logo.png",
 	},
 };
 
@@ -27,6 +27,16 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en' suppressHydrationWarning>
+			{/* Dzongkha Uchen Font */}
+			<head>
+				<link
+					rel='stylesheet'
+					media='screen'
+					href='https://fontlibrary.org//face/ddc-uchen'
+					type='text/css'
+				/>
+			</head>
+
 			<body className={poppins.variable}>
 				<ThemeProvider
 					attribute='class'

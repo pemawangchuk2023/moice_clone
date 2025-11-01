@@ -27,36 +27,51 @@ const DesktopNavbar = () => {
 		resolvedTheme === "dark" ? "/assets/heading2.png" : "/assets/heading1.png";
 
 	return (
-		<div className='hidden md:block sticky top-0 w-full z-50 bg-background shadow-md'>
-			<div className='absolute top-4 right-6 z-50 flex items-center gap-3'>
+		<div className='hidden md:block sticky top-0 w-full z-50 bg-background shadow-md relative'>
+			{/* Top Bar: Left emblem — Dzongkha title — Right logo */}
+			<div className='w-full flex items-center justify-between py-4 px-6'>
+				{/* Left Logo */}
 				<Image
-					src='/assets/believe.png'
-					alt='Believe Logo'
+					src='/assets/logo.png'
+					alt='Royal Emblem'
 					width={120}
 					height={120}
 					className='rounded-md'
 					priority
 				/>
-				<ThemeToggle />
-			</div>
 
-			<div className='relative flex items-center justify-center pb-2 px-6 mt-4'>
-				{/* Heading - stays centered */}
+				{/* Center Dzongkha Title */}
+				<p
+					lang='dz'
+					className='text-center'
+					style={{
+						fontFamily: "'DDCUchenRegular','DDC Uchen', serif",
+						fontWeight: 700,
+						lineHeight: 1.6,
+						fontSize: "1.8rem",
+						WebkitTextStroke: "0.3px",
+						textShadow: "0.3px 0.3px currentColor",
+					}}
+				>
+					༆བཟོ་གྲྭ་ཚོང་འབྲེལ་དང་ལཱ་གཡོག་ལྷན་ཁག ། དཔལ་ལྡན་འབྲུག་གཞུང་།
+				</p>
 
-				<div className='flex justify-center rounded-none'>
+				{/* Right Logo + Theme Toggle */}
+				<div className='flex items-center gap-3'>
 					<Image
-						src={headingImage}
-						alt='heading'
-						width={600}
-						height={600}
-						className='hidden md:block dark:invert-0 w-auto h-auto max-w-[450px] lg:max-w-[450px]'
+						src='/assets/believe.png'
+						alt='Believe Logo'
+						width={90}
+						height={90}
+						className='rounded-md'
 						priority
 					/>
+					<ThemeToggle />
 				</div>
 			</div>
 
 			{/* Ministry name - responsive text sizing */}
-			<p className='text-2xl md:text-3xl lg:text-4xl font-bold text-center mt-4 px-4 tracking-wide leading-relaxed bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-400 bg-clip-text text-transparent'>
+			<p className='text-2xl md:text-3xl lg:text-4xl font-bold text-center mt-0 px-4 tracking-wide leading-relaxed bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-400 bg-clip-text text-transparent'>
 				Ministry of Industry, Commerce and Employment
 			</p>
 
