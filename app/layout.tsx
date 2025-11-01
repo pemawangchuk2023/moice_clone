@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 	description:
 		"The web application developed to test NextJS 16 and its feature",
 	icons: {
-		icon: "/assets/logo.png",
+		icon: "/assets/emblem.png",
 	},
 };
 

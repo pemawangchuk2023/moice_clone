@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { Menu, ChevronDown, ChevronRight } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -13,13 +12,11 @@ import {
 } from "@/components/ui/collapsible";
 import { cn } from "@/lib/utils";
 import { navigationLinks } from "@/constants/navigationLinks";
-import { useTheme } from "next-themes";
 
 const MobileNavbar = () => {
 	const [open, setOpen] = useState(false);
 	const [expandedItems, setExpandedItems] = useState<string[]>([]);
 	const pathname = usePathname();
-	const { resolvedTheme } = useTheme();
 
 	const toggleExpanded = (href: string) => {
 		setExpandedItems((prev) =>
@@ -32,22 +29,28 @@ const MobileNavbar = () => {
 	const isActive = (href: string) =>
 		pathname === href || pathname.startsWith(`${href}/`);
 
-	const headingImage =
-		resolvedTheme === "dark" ? "/assets/heading2.png" : "/assets/heading1.png";
-
 	return (
 		<div className='flex md:hidden w-full'>
 			<Sheet open={open} onOpenChange={setOpen}>
 				<div className='flex items-center justify-between px-4 py-3'>
 					<div className='flex flex-col items-center justify-center w-full'>
-						<Image
-							src={headingImage}
-							alt='heading'
-							width={600}
-							height={600}
-							className='mb-2'
-							priority
-						/>
+						<div
+							lang='dz'
+							className='text-center leading-snug'
+							style={{
+								fontFamily: "'DDCUchenRegular','DDC Uchen', serif",
+								fontWeight: 700,
+								WebkitTextStroke: "0.3px",
+								textShadow: "0.3px 0.3px currentColor",
+							}}
+						>
+							<p className='text-[1.3rem] md:text-[1.6rem] lg:text-[2rem]'>
+								༆བཟོ་གྲྭ་ཚོང་འབྲེལ་དང་ལཱ་གཡོག་ལྷན་ཁག །
+							</p>
+							<p className='text-[1.1rem] md:text-[1.4rem] lg:text-[1.8rem] mt-1'>
+								དཔལ་ལྡན་འབྲུག་གཞུང་།
+							</p>
+						</div>
 						<p className='text-xl font-bold text-center text-accent-foreground'>
 							Ministry of Industry, Commerce and Employment
 						</p>

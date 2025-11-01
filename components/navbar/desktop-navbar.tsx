@@ -23,8 +23,6 @@ const DesktopNavbar = () => {
 	const isActive = (href: string) => {
 		return pathname === href || pathname.startsWith(`${href}/`);
 	};
-	const headingImage =
-		resolvedTheme === "dark" ? "/assets/heading2.png" : "/assets/heading1.png";
 
 	return (
 		<div className='hidden md:block sticky top-0 w-full z-50 bg-background shadow-md relative'>
@@ -41,29 +39,32 @@ const DesktopNavbar = () => {
 				/>
 
 				{/* Center Dzongkha Title */}
-				<p
+				<div
 					lang='dz'
-					className='text-center'
+					className='text-center leading-snug'
 					style={{
 						fontFamily: "'DDCUchenRegular','DDC Uchen', serif",
 						fontWeight: 700,
-						lineHeight: 1.6,
-						fontSize: "1.8rem",
 						WebkitTextStroke: "0.3px",
 						textShadow: "0.3px 0.3px currentColor",
 					}}
 				>
-					༆བཟོ་གྲྭ་ཚོང་འབྲེལ་དང་ལཱ་གཡོག་ལྷན་ཁག ། དཔལ་ལྡན་འབྲུག་གཞུང་།
-				</p>
+					<p className='text-[1.6rem] md:text-[1.8rem] lg:text-[2rem]'>
+						༆བཟོ་གྲྭ་ཚོང་འབྲེལ་དང་ལཱ་གཡོག་ལྷན་ཁག །
+					</p>
+					<p className='text-[1.4rem] md:text-[1.6rem] lg:text-[1.8rem] mt-1'>
+						དཔལ་ལྡན་འབྲུག་གཞུང་།
+					</p>
+				</div>
 
 				{/* Right Logo + Theme Toggle */}
-				<div className='flex items-center gap-3'>
+				<div className='flex items-center gap-2'>
 					<Image
 						src='/assets/believe.png'
 						alt='Believe Logo'
-						width={90}
-						height={90}
-						className='rounded-md'
+						width={150}
+						height={150}
+						className='rounded-none'
 						priority
 					/>
 					<ThemeToggle />
