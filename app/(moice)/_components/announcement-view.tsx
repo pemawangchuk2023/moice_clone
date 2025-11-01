@@ -126,8 +126,8 @@ const AnnouncementView = ({
 	// If no file and short description, only show views
 	if (!hasFileContent && isShortDescription) {
 		return (
-			<div className='flex items-center justify-end gap-3 max-sm:w-full'>
-				<div className='flex items-center px-4 py-4  border rounded-none'>
+			<div className='flex items-center px-4 py-4 max-sm:px-2 max-sm:py-2 border rounded-none'>
+				<div className='flex items-center px-4 py-4 border rounded-none'>
 					<div className='flex items-center gap-2 text-sm font-medium'>
 						<EyeIcon size={25} className='text-foreground' />
 						<p className='text-foreground'>
@@ -154,7 +154,7 @@ const AnnouncementView = ({
 						{getButtonContent()}
 					</span>
 				</Button>
-				<div className='flex items-center px-4 py-4 shadow-sm border rounded-none'>
+				<div className='flex items-center px-4 py-4 max-sm:px-2 max-sm:py-2 border rounded-none'>
 					<div className='flex items-center gap-2 text-sm font-medium'>
 						<EyeIcon size={25} className='text-foreground' />
 						<p className='text-foreground'>
@@ -206,7 +206,7 @@ const AnnouncementView = ({
 					</AlertDialogFooter>
 				</AlertDialogContent>
 			</AlertDialog>
-			<div className='flex items-center px-4 py-3.5 shadow-sm border rounded-none'>
+			<div className='flex items-center px-4 py-4 max-sm:px-2 max-sm:py-2 border rounded-none'>
 				<div className='flex items-center gap-2 text-sm font-medium'>
 					<EyeIcon size={25} className='text-foreground' />
 					<p className='text-foreground text-[14px]'>

@@ -158,7 +158,7 @@ const DoL = ({
 						<div className='flex gap-2'>
 							<button
 								onClick={() => setViewMode("cards")}
-								className={`px-4 py-2 rounded-none text-sm font-medium transition-colors ${
+								className={`px-2 py-1 sm:px-4 sm:py-2 rounded-none text-xs sm:text-sm font-medium transition-colors ${
 									viewMode === "cards"
 										? "bg-blue-600 text-white"
 										: "bg-slate-200 text-slate-700 hover:bg-slate-300"
@@ -168,7 +168,7 @@ const DoL = ({
 							</button>
 							<button
 								onClick={() => setViewMode("compact")}
-								className={`px-4 py-2 rounded-none text-sm font-medium transition-colors ${
+								className={`px-2 py-1 sm:px-4 sm:py-2 rounded-none text-xs sm:text-sm font-medium transition-colors ${
 									viewMode === "compact"
 										? "bg-blue-600 text-white"
 										: "bg-slate-200 text-slate-700 hover:bg-slate-300"
