@@ -5,10 +5,40 @@ import { ChevronRight, Monitor } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import AnnouncementUpload from "@/app/(moice)/_components/announcement-upload";
 import ThemeToggle from "@/themes/theme-toggle";
+import HeroUpload from "@/app/(moice)/dashboard/hero/_components/hero-upload";
+
+// Section Header Component
+const SectionHeader = ({ title }: { title: string }) => (
+	<>
+		<div className='h-16 border-neutral-700 flex items-center justify-center px-6'>
+			<div className='text-xl text-amber-500 font-extrabold'>{title}</div>
+		</div>
+		<div className='h-1 md:h-1.5 bg-gradient-to-r from-transparent via-yellow-500 to-transparent w-48 sm:w-64 mx-auto rounded-full mb-4 md:mb-6' />
+	</>
+);
+
+// Section Content Component
+const SectionContent = ({ children }: { children: React.ReactNode }) => (
+	<div className='flex-1 overflow-auto'>{children}</div>
+);
 
 const Dashboard = () => {
-	const [activeSection, setActiveSection] = useState("overview");
+	const [activeSection, setActiveSection] = useState("announcement");
 	const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+
+	// Navigation items
+	const navItems = [
+		{
+			id: "announcement",
+			icon: Monitor,
+			label: "Announcements",
+			component: <AnnouncementUpload />,
+		},
+		{ id: "hero", icon: Monitor, label: "Hero", component: <HeroUpload /> },
+	];
+
+	// Get active section data
+	const activeItem = navItems.find((item) => item.id === activeSection);
 
 	return (
 		<div className='flex h-screen'>
@@ -16,7 +46,7 @@ const Dashboard = () => {
 			<div
 				className={`${
 					sidebarCollapsed ? "w-16" : "w-70"
-				}  border-r border-neutral-700 transition-all duration-300 fixed md:relative z-50 md:z-auto h-full md:h-auto ${
+				} border-r border-neutral-700 transition-all duration-300 fixed md:relative z-50 md:z-auto h-full md:h-auto ${
 					!sidebarCollapsed ? "md:block" : ""
 				}`}
 			>
@@ -40,9 +70,7 @@ const Dashboard = () => {
 					</div>
 
 					<nav className='space-y-2'>
-						{[
-							{ id: "announcement", icon: Monitor, label: "Announcements" },
-						].map((item) => (
+						{navItems.map((item) => (
 							<button
 								key={item.id}
 								onClick={() => setActiveSection(item.id)}
@@ -71,23 +99,12 @@ const Dashboard = () => {
 			)}
 
 			{/* Main Content */}
-			<div
-				className={`flex-1 flex flex-col ${!sidebarCollapsed ? "md:ml-0" : ""}`}
-			>
-				{/* Top Toolbar */}
-				<div className='h-16 border-neutral-700 flex items-center justify-center px-6'>
-					<div className='flex items-center gap-4'>
-						<div className='text-xl text-amber-500 font-extrabold items-center'>
-							Announcement
-						</div>
-					</div>
-				</div>
-				<div className='h-1 md:h-1.5 bg-gradient-to-r from-transparent via-yellow-500 to-transparent w-48 sm:w-64 mx-auto rounded-full mb-4 md:mb-6' />
+			<div className='flex-1 flex flex-col'>
+				{/* Section Header */}
+				<SectionHeader title={activeItem?.label || ""} />
 
-				{/* Dashboard Content */}
-				<div className='flex-1 overflow-auto'>
-					{activeSection === "announcement" && <AnnouncementUpload />}
-				</div>
+				{/* Section Content */}
+				<SectionContent>{activeItem?.component}</SectionContent>
 			</div>
 		</div>
 	);

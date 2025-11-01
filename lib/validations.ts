@@ -22,3 +22,10 @@ export const AdminLoginSchema = z.object({
 		.min(8, "Password must be at least 8 characters")
 		.max(128),
 });
+
+export const heroBannerSchema = z.object({
+	title: z.string().min(1, "Title is required"),
+	description: z.string().min(1, "Description is required"),
+	imageData: z.string().optional(),
+	imageMimeType: z.string().optional(),
+});

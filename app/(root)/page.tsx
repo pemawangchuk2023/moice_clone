@@ -15,6 +15,7 @@ import { dolCategories } from "@/constants/publications/dol";
 import DoT from "@/app/(root)/publications/_components/dot/dot";
 import { dotCategories } from "@/constants/publications/trade";
 import AnnouncementDisplay from "@/app/(moice)/_components/announcement-display";
+import HeroDisplay from "@/app/(moice)/_components/hero-display";
 
 const Publications = () => {
 	const tabs = [
@@ -26,6 +27,7 @@ const Publications = () => {
 
 	return (
 		<div>
+			<HeroDisplay />
 			<div className='mt-2'>
 				<AnnouncementDisplay />
 			</div>

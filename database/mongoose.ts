@@ -17,17 +17,6 @@ if (!cached) {
 }
 
 export const connectToDatabase = async () => {
-	// Debug logging
-	console.log("=== Environment Debug ===");
-	console.log("NODE_ENV:", process.env.NODE_ENV);
-	console.log("MONGODB_URI exists:", !!process.env.MONGODB_URI);
-	console.log("MONGODB_URI length:", process.env.MONGODB_URI?.length);
-	console.log(
-		"All env keys:",
-		Object.keys(process.env).filter((key) => key.includes("MONGO"))
-	);
-	console.log("========================");
-
 	const MONGODB_URI = process.env.MONGODB_URI;
 
 	if (!MONGODB_URI) throw new Error("MONGODB_URI must be set within .env");
