@@ -13,11 +13,9 @@ import {
 	NavigationMenuTrigger,
 	navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { useTheme } from "next-themes";
 import ThemeToggle from "@/themes/theme-toggle";
 
 const DesktopNavbar = () => {
-	const { resolvedTheme } = useTheme();
 	const pathname = usePathname();
 
 	const isActive = (href: string) => {
@@ -46,10 +44,10 @@ const DesktopNavbar = () => {
 						fontFamily: "'DDCUchenRegular','DDC Uchen', serif",
 						fontWeight: 700,
 						WebkitTextStroke: "0.3px",
-						textShadow: "0.3px 0.3px currentColor",
+						textShadow: "0.3px 0.3px",
 					}}
 				>
-					<p className='text-[1.6rem] md:text-[1.8rem] lg:text-[2rem]'>
+					<p className='text-[1.6rem] md:text-[1.8rem] lg:text-[2rem] text-amber-600'>
 						༆བཟོ་གྲྭ་ཚོང་འབྲེལ་དང་ལཱ་གཡོག་ལྷན་ཁག །
 					</p>
 					<p className='text-[1.4rem] md:text-[1.6rem] lg:text-[1.8rem] mt-1'>
