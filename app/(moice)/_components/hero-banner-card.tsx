@@ -44,7 +44,7 @@ const HeroBannerCard = ({ banner }: HeroBannerCardProps) => {
 
 	return (
 		<div className='relative'>
-			<div className='relative z-10 text-center mx-auto py-4 px-6'>
+			<div className='relative z-10 text-center mx-auto py-2 px-6'>
 				<h1 className='text-3xl md:text-4xl font-extrabold bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent mb-3 leading-tight drop-shadow-[0_0_20px_rgba(59,130,246,0.4)]'>
 					{banner.title}
 				</h1>
@@ -72,7 +72,7 @@ const HeroBannerCard = ({ banner }: HeroBannerCardProps) => {
 							<AlertDialogTrigger asChild>
 								<Button
 									variant='link'
-									className='mt-2 p-0 h-auto font-semibold text-blue-500 hover:text-blue-600'
+									className='mt-2 text-xl p-0 h-auto font-semibold text-blue-500 hover:text-blue-600'
 								>
 									Read more
 								</Button>

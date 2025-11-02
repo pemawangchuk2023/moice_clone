@@ -3,6 +3,7 @@ import "./globals.css";
 import ThemeProvider from "@/themes/theme-provider";
 import { Poppins } from "next/font/google";
 import { Toaster } from "@/components/ui/sonner";
+import ScrollButton from "@/components/shared/scroll-button";
 
 const poppins = Poppins({
 	subsets: ["latin"],
@@ -43,7 +44,10 @@ export default function RootLayout({
 					enableSystem={false}
 					disableTransitionOnChange
 				>
-					<main>{children}</main>
+					<main>
+						<ScrollButton />
+						{children}
+					</main>
 					<Toaster />
 				</ThemeProvider>
 			</body>

@@ -89,7 +89,7 @@ const AnnouncementView = ({
 				</div>
 			)}
 
-			<div className='text-justify text-[14px]'>
+			<div className='text-justify text-[18px]'>
 				<Preview content={description} />
 			</div>
 		</div>

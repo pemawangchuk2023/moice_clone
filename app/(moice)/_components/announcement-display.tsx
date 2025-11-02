@@ -127,19 +127,19 @@ const AnnouncementDisplay = () => {
 												<span className='text-foreground font-bold'>
 													Posted:
 												</span>
-												<span className='text-foreground font-extrabold text-[14px]'>
+												<span className='text-green-500 font-extrabold text-[18px]'>
 													{formatDateTime(announcement.created_at)}
 												</span>
 											</div>
 										</div>
-										<CardTitle className='text-[18px] font-bold'>
+										<CardTitle className='text-[20px] font-bold'>
 											<span className='inline-block border-b-2 border-amber-500'>
 												{announcement.title}
 											</span>
 										</CardTitle>
 									</CardHeader>
 									<CardContent className='pt-1 space-y-1'>
-										<p className='text-foreground leading-relaxed line-clamp-3 text-justify text-[14px]'>
+										<p className='text-foreground leading-relaxed line-clamp-3 text-justify text-[18px]'>
 											{(announcement.description || "").replace(/\*/g, "")}
 										</p>
 

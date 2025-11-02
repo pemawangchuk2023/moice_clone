@@ -86,7 +86,7 @@ const DesktopNavbar = () => {
 										<>
 											<NavigationMenuTrigger
 												className={cn(
-													"uppercase font-semibold text-[10px] md:text-xs lg:text-sm h-9 md:h-10 px-2 md:px-3 lg:px-4 group rounded-none border-b-2 border-emerald-500 dark:border-emerald-400 cursor-pointer whitespace-nowrap transition-all duration-300",
+													"uppercase font-semibold text-sm md:text-base lg:text-lg h-9 md:h-10 px-3 md:px-4 lg:px-5 group rounded-none border-b-2 border-emerald-500 dark:border-emerald-400 cursor-pointer whitespace-nowrap transition-all duration-300",
 													"text-foreground hover:text-emerald-600 dark:hover:text-emerald-400",
 													item.subLinks.some((sub) => isActive(sub.href)) &&
 														"text-emerald-600 dark:text-emerald-400 border-b-4"

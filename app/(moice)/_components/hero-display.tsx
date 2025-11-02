@@ -64,7 +64,7 @@ const HeroDisplay = () => {
 					<Skeleton className='w-full h-full' />
 				</div>
 			) : hero.length === 0 ? (
-				<div className='text-center py-20'>
+				<div className='text-center py-10'>
 					<p className='text-lg text-foreground'>
 						No hero banners available at the moment.
 					</p>
@@ -90,7 +90,7 @@ const HeroDisplay = () => {
 					</Carousel>
 
 					{/* Pagination below images */}
-					<div className='mt-6 flex justify-center'>
+					<div className='mt-2 flex justify-center'>
 						<PaginationComponent
 							currentPage={currentPage}
 							totalPages={totalPages}

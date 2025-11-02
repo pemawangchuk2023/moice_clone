@@ -1,5 +1,4 @@
 import Image from "next/image";
-import React from "react";
 import {
 	AlertDialog,
 	AlertDialogContent,
@@ -12,12 +11,10 @@ import { Button } from "@/components/ui/button";
 
 const Disclaimer = () => {
 	const technologies = [
-		{ name: "Next.js", category: "Framework" },
+		{ name: "Next.js 16.0", category: "Framework" },
 		{ name: "React", category: "Library" },
 		{ name: "TypeScript", category: "Language" },
 		{ name: "Tailwind CSS", category: "Styling" },
-		{ name: "Radix UI", category: "Components" },
-		{ name: "Lucide React", category: "Icons" },
 		{ name: "MongoDB", category: "Database" },
 		{ name: "Mongoose", category: "ODM" },
 		{ name: "Better Auth", category: "Authentication" },
@@ -25,9 +22,7 @@ const Disclaimer = () => {
 		{ name: "React Hook Form", category: "Forms" },
 		{ name: "Zod", category: "Validation" },
 		{ name: "MDX Editor", category: "Editor" },
-		{ name: "Markdown-it", category: "Markdown" },
-		{ name: "Next Themes", category: "Theming" },
-		{ name: "Sonner", category: "Notifications" },
+		{ name: "shadcn/ui", category: "UI Component Library" },
 	];
 
 	const groupedTech = technologies.reduce<Record<string, string[]>>(
@@ -67,7 +62,7 @@ const Disclaimer = () => {
 								<h3 className='text-xs font-semibold text-amber-800'>
 									Disclaimer
 								</h3>
-								<div className='mt-1 text-xs text-amber-700 text-justify leading-snug'>
+								<div className='mt-1 text-[18px] text-amber-700 text-justify leading-snug'>
 									<p>
 										This is a cloned website created for
 										<span className='font-medium mx-1 bg-amber-100 text-amber-800 px-1.5 py-0.5 rounded'>
@@ -92,7 +87,63 @@ const Disclaimer = () => {
 										</span>
 									</p>
 								</div>
-								<p></p>
+
+								{/* View Tech Stack Button moved below text */}
+								<div className='mt-3'>
+									<AlertDialog>
+										<AlertDialogTrigger asChild>
+											<Button
+												size='sm'
+												className='text-xs text-green-500 border-2 border-amber-500 rounded-none cursor-pointer font-extrabold'
+											>
+												View Tech Stack
+											</Button>
+										</AlertDialogTrigger>
+										<AlertDialogContent className='max-w-3xl max-h-[80vh] overflow-y-auto'>
+											<AlertDialogHeader>
+												<AlertDialogTitle className='text-xl font-bold'>
+													Technology Stack
+												</AlertDialogTitle>
+												<AlertDialogDescription className='text-[18px]'>
+													A comprehensive list of technologies powering this
+													project
+												</AlertDialogDescription>
+											</AlertDialogHeader>
+
+											<div className='grid grid-cols-1 md:grid-cols-2 gap-6 py-2'>
+												{Object.entries(groupedTech).map(
+													([category, techs]) => (
+														<div key={category} className='space-y-2'>
+															<h3 className='text-sm font-semibold text-foreground uppercase tracking-wide'>
+																{category}
+															</h3>
+															<div className='space-y-1'>
+																{techs.map((tech, index) => (
+																	<div
+																		key={index}
+																		className='px-3 py-2 bg-secondary/50 rounded-none text-amber-500 text-sm font-medium hover:bg-secondary transition-colors'
+																	>
+																		{tech}
+																	</div>
+																))}
+															</div>
+														</div>
+													)
+												)}
+											</div>
+
+											<div className='flex justify-end pt-4 border-t'>
+												<Button
+													variant='destructive'
+													asChild
+													className='rounded-none cursor-pointer'
+												>
+													<AlertDialogTrigger>Close</AlertDialogTrigger>
+												</Button>
+											</div>
+										</AlertDialogContent>
+									</AlertDialog>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -107,58 +158,6 @@ const Disclaimer = () => {
 							className='rounded-lg shadow-sm bg-green-500 object-cover'
 						/>
 						<p className='text-xs font-medium text-green-800'>Pema Wangchuk</p>
-
-						{/* Tech Stack Button */}
-						<AlertDialog>
-							<AlertDialogTrigger asChild>
-								<Button
-									size='sm'
-									className='text-xs text-green-500 border-2 border-amber-500 rounded-none cursor-pointer'
-								>
-									View Tech Stack
-								</Button>
-							</AlertDialogTrigger>
-							<AlertDialogContent className='max-w-3xl max-h-[80vh] overflow-y-auto'>
-								<AlertDialogHeader>
-									<AlertDialogTitle className='text-xl font-bold'>
-										Technology Stack
-									</AlertDialogTitle>
-									<AlertDialogDescription className='text-[18px]'>
-										A comprehensive list of technologies powering this project
-									</AlertDialogDescription>
-								</AlertDialogHeader>
-
-								<div className='grid grid-cols-1 md:grid-cols-2 gap-6 py-2'>
-									{Object.entries(groupedTech).map(([category, techs]) => (
-										<div key={category} className='space-y-2'>
-											<h3 className='text-sm font-semibold text-foreground uppercase tracking-wide'>
-												{category}
-											</h3>
-											<div className='space-y-1'>
-												{techs.map((tech, index) => (
-													<div
-														key={index}
-														className='px-3 py-2 bg-secondary/50 rounded-none text-amber-500 text-sm font-medium hover:bg-secondary transition-colors'
-													>
-														{tech}
-													</div>
-												))}
-											</div>
-										</div>
-									))}
-								</div>
-
-								<div className='flex justify-end pt-4 border-t'>
-									<Button
-										variant='destructive'
-										asChild
-										className='rounded-none cursor-pointer'
-									>
-										<AlertDialogTrigger>Close</AlertDialogTrigger>
-									</Button>
-								</div>
-							</AlertDialogContent>
-						</AlertDialog>
 					</div>
 				</div>
 			</div>
