@@ -157,7 +157,10 @@ const Disclaimer = () => {
 							height={110}
 							className='rounded-lg shadow-sm bg-green-500 object-cover'
 						/>
-						<p className='text-xs font-medium text-green-800'>Pema Wangchuk</p>
+						<p className='text-xl font-medium text-green-800'>Pema Wangchuk</p>
+						<p className='text-blue-700 text-xl'>
+							Deputy Chief Finance Officer
+						</p>
 					</div>
 				</div>
 			</div>
