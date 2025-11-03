@@ -39,18 +39,16 @@ const DesktopNavbar = () => {
 				{/* Center Dzongkha Title */}
 				<div
 					lang='dz'
-					className='text-center leading-snug'
+					className='text-center leading-snug mt-2'
 					style={{
-						fontFamily: "'DDCUchenRegular','DDC Uchen', serif",
+						fontFamily: "'DDCUchenRegular', 'DDC Uchen', serif",
 						fontWeight: 700,
-						WebkitTextStroke: "0.3px",
-						textShadow: "0.3px 0.3px",
 					}}
 				>
-					<p className='text-[1.6rem] md:text-[1.8rem] lg:text-[2rem] text-amber-600'>
-						༆བཟོ་གྲྭ་ཚོང་འབྲེལ་དང་ལཱ་གཡོག་ལྷན་ཁག །
+					<p className='text-[2.4rem] md:text-[2.6rem] lg:text-[3rem] text-amber-600 leading-tight scale-[1.15]'>
+						༆བཟོ་གྲྭ་ཚོང་འབྲེལ་དང་ལཱ་གཡོག་ལྷན་ཁག།
 					</p>
-					<p className='text-[1.4rem] md:text-[1.6rem] lg:text-[1.8rem] mt-1'>
+					<p className='text-[2.2rem] md:text-[2.4rem] lg:text-[2.8rem] mt-1 leading-tight scale-[1.1]'>
 						དཔལ་ལྡན་འབྲུག་གཞུང་།
 					</p>
 				</div>

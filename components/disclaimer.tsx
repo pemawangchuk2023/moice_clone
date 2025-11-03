@@ -149,7 +149,8 @@ const Disclaimer = () => {
 					</div>
 
 					{/* Image Section (Right side, 1/4 width) */}
-					<div className='w-full md:w-1/4 flex flex-col items-center gap-2'>
+					{/* Image Section (Right side, 1/4 width) */}
+					<div className='w-full md:w-1/4 flex items-center justify-center gap-3'>
 						<Image
 							src='/assets/author.png'
 							alt='author'
@@ -157,10 +158,16 @@ const Disclaimer = () => {
 							height={110}
 							className='rounded-lg shadow-sm bg-green-500 object-cover'
 						/>
-						<p className='text-xl font-medium text-green-800'>Pema Wangchuk</p>
-						<p className='text-blue-700 text-xl'>
-							Deputy Chief Finance Officer
-						</p>
+
+						{/* Text beside image */}
+						<div className='flex flex-col items-start'>
+							<p className='text-xl font-medium text-green-800'>
+								Pema Wangchuk
+							</p>
+							<p className='text-blue-800 dark:text-blue-400 font-extrabold text-lg md:text-[20px] lg:text-xl tracking-wide drop-shadow-sm'>
+								Self-Taught Next.js & Smart Contract Developer
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>

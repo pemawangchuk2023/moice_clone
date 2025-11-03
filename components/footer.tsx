@@ -105,8 +105,8 @@ const Footer = () => {
 
 				{/* Bottom Section */}
 				<div className='flex flex-col md:flex-row md:justify-between items-center gap-4'>
-					<div className='text-sm text-amber-500 font-extrabold text-center md:text-left'>
-						© {currentYear} Ministry of Industry, Commerce and Employment.
+					<div className='text-2xl text-amber-500 font-extrabold text-center md:text-left'>
+						© {currentYear} Ministry of Industry, Commerce and Employment
 					</div>
 					{/* Media Focal Person */}
 					<div className='text-sm text-foreground text-center md:text-right'>
