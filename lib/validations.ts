@@ -29,3 +29,5 @@ export const heroBannerSchema = z.object({
 	imageData: z.string().optional(),
 	imageMimeType: z.string().optional(),
 });
+
+export const feedbackSchema = z.object({});

@@ -69,10 +69,14 @@ export async function uploadAnnouncement(formData: FormData) {
 
 export const getAnnouncements = cache(
 	async (): Promise<UploadAnnouncement[]> => {
+		const start = performance.now();
 		await connectToDatabase();
 		const announcements = await AnnouncementModel.find().sort({
 			created_at: -1,
 		});
+		const end = performance.now();
+		console.log(`[getAnnouncements] Took ${(end - start).toFixed(2)} ms`);
+
 		return announcements.map((ann) => {
 			let fileType = "none";
 			let fileUrl = "";
